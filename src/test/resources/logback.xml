@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{ISO8601} [%level] [%thread] %logger{10}.%M\(%F:%L{}\) - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <variable name="QA_EXAMPLE_LOG_LEVEL" value="${QA_EXAMPLE_LOG_LEVEL:-DEBUG}" />
+    <root level="${QA_EXAMPLE_LOG_LEVEL}">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
